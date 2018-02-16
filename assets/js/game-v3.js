@@ -1,5 +1,5 @@
 
-// JS - Hangman  Game
+// JS - Candy - Hangman  Game
 
 /******************
 VARIABLES
@@ -21,6 +21,9 @@ var userPick = [];
 //Number of Wins  
 var wins = 0;
 var winsShown = document.getElementById('wins');
+
+//Completed Word  
+var rightWord = 0;
 
 //Start of 15 Chances to Guess  
 var chances = 15;
@@ -50,6 +53,18 @@ function startGame(){
 	chances = 15;
 	chancesShown.textContent = chances;
 }
+
+function usersFate(){
+if(rightWord === candy.length){
+alert('Winner');
+startGame();
+}
+else if (chances === 0){
+	alert('Loser, try again');
+	startGame();		
+	}
+
+}
 //User Guesses
 document.onkeyup = function(event) {
 userPick = event.key;
@@ -57,13 +72,18 @@ userPick = event.key;
 
 //Checking to see if the letter is inside the word
 if(candy.indexOf(userPick) > -1){
-	for(var j = 0; i < candy.length; j++){
-		bla
+	for(var j = 0; j < candy.length; j++){
+		if(candy[j] === userPick){
+			blankCandy[j] = userPick;
+			rightWord++;
+			usersFate();
+		}
 	}
 }
 else {
 	wrongLetter.push(userPick); //Store the Letter Choices
 	chances--; // Subtract Chances Tally
+	usersFate();
 		
 }
 
