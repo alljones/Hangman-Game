@@ -29,16 +29,29 @@ function startGame() {
     document.getElementById('guesses-left').textContent =  guessesLeft;
 }
 
+function winLose() {
+    if (winCounter === randWord.length){
+
+    }
+}
+
 //Users Input
 document.onkeyup = function(event) {
 userGuesses = event.key;
-//Test ~ console.log(UserGuesses);
+//Test ~ console.log(userGuesses);
 // Checking if the letter exist inside of the word
 if(randWord.indexOf(userGuesses) > -1) {
-
+    for(var i = 0; i < randWord.length; i++) {
+        if(randWord[i] === userGuesses) {
+            underScores[i] = userGuesses;
+            winCounter++;
+            winLose();
+        }
+    }
 }
 else {
     wrongLetter.push(userGuesses);
+    guessesLeft--;
 }
 
 }

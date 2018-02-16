@@ -25,18 +25,21 @@
                     <h4 class="text-center">Wins: <span id="wins">0</span></h4>
                 </div>
                 <div class="col-sm-6">
-                        <h4 class="text-center">Guesses Left: <span id="guessLeft">15</span></h4>
+                        <h4 class="text-center">Chances Left: <span id="chances">15</span></h4>
                 </div>
             </div><!-- Close of Wins & Guesses Left Cols -->
 
 
-            <div class="row guess-box">
+            <div class="row guess-box"><!-- Open of Guess Box -->
                 <div class="col-md-12">
-                    <h2 class="text-center">_ _ _ _ _ _ _ _ _ _ _ _ _ _ </h2>
+                    <h2 id="missing" class="text-center">_ _ _ _ _ _ _ _ _ _ _ _ _ _ </h2>
                     <h4 class="text-center">Guess That Candy</h4>
-                </div>
+                </div><!-- Close of Guess Box -->
             </div>
-            <div class="row"></div>
+            <div class="row">
+                <h4 class="text-center">Letters Already Selected:</h4>
+                <p id="lettersShown"class="text-center"></p>
+            </div>
 
 
 
@@ -50,6 +53,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="assets/js/game.js"></script>
+    <script src="assets/js/game-v3.js"></script>
 </body>
 </html>
